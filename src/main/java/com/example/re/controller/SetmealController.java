@@ -1,10 +1,12 @@
 package com.example.re.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.example.re.common.R;
 import com.example.re.dto.SetmealDto;
 import com.example.re.entity.Category;
+import com.example.re.entity.Dish;
 import com.example.re.entity.Setmeal;
 import com.example.re.service.CategoryService;
 import com.example.re.service.SetmealDishService;
@@ -71,6 +73,14 @@ public class SetmealController {
         return R.success("套餐删除成功");
     }
 
+    @PostMapping("/status/{s}")
+    public R<String> status(@PathVariable String s,@RequestParam List<Long> ids){
+        LambdaUpdateWrapper<Setmeal> updateWrapper=new LambdaUpdateWrapper<>();
+        updateWrapper.set(Setmeal::getStatus,s);
+        updateWrapper.in(Setmeal::getId,ids);
+        setmealService.update(null,updateWrapper);
+        return  R.success("修改成功");
+    }
 
     @GetMapping("/list")
     public R<List<Setmeal>> list(Setmeal setmeal){
