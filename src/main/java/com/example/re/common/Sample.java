@@ -34,7 +34,7 @@ public class Sample {
 //        java.util.List<String> args = java.util.Arrays.asList(args_);
         // 请确保代码运行环境设置了环境变量 ALIBABA_CLOUD_ACCESS_KEY_ID 和 ALIBABA_CLOUD_ACCESS_KEY_SECRET。
         // 工程代码泄露可能会导致 AccessKey 泄露，并威胁账号下所有资源的安全性。以下代码示例使用环境变量获取 AccessKey 的方式进行调用，仅供参考，建议使用更安全的 STS 方式，更多鉴权访问方式请参见：https://help.aliyun.com/document_detail/378657.html
-        com.aliyun.dysmsapi20170525.Client client = Sample.createClient( "LTAI5tB7L41QA3bGN9sZDJG1", "MotpOtTDmgTg9m9zAR4px7vPef9dip");
+        com.aliyun.dysmsapi20170525.Client client = Sample.createClient( );
         com.aliyun.dysmsapi20170525.models.SendSmsRequest sendSmsRequest = new com.aliyun.dysmsapi20170525.models.SendSmsRequest()
                 .setTemplateCode("SMS_461035623")
                 .setTemplateParam("{\"code\":\"1234\"}")
