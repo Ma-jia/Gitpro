@@ -32,7 +32,7 @@ public class AliyunSms {
 	}
 
 	public static void main(String phone,String code) throws Exception {
-		com.aliyun.dysmsapi20170525.Client client = AliyunSms.createClient("LTAI5tB7L41QA3bGN9sZDJG1", "MotpOtTDmgTg9m9zAR4px7vPef9dip");
+		com.aliyun.dysmsapi20170525.Client client = AliyunSms.createClient("", "");
 		com.aliyun.dysmsapi20170525.models.SendSmsRequest sendSmsRequest = new com.aliyun.dysmsapi20170525.models.SendSmsRequest()
 				.setPhoneNumbers("测试手机号")
 				.setTemplateParam("{\"code\":\""+code+"\"}")
